@@ -48,10 +48,10 @@ INSERT INTO Movies (Title, Director, Genre) VALUES
 ## Stumbling Block & Solution
 
 ### Issue:
-During the development phase, users consistently received an error stating, "Unable to connect to database, make sure the password is correct."
+During the development phase, users consistently encountered errors when trying to query the database with specific parameters.
 
 ### Solution:
-After thorough debugging, we realized that hardcoding database credentials was a potential pitfall. By externalizing the database configurations and allowing users to input or modify them, we managed to overcome the connection issue. This approach also added an extra layer of security, as credentials were no longer hardcoded.
+Upon investigating, it became clear that we were using createStatement which is not suitable for parameterized queries. After referring to the JDBC documentation, we switched to using prepareStatement, allowing us to securely and efficiently handle user input parameters. This change resolved the error and enhanced the reliability of our database interactions.
 
 ## Contributions
 We welcome contributions! Please feel free to submit pull requests or raise issues to enhance the functionality of this application.
