@@ -41,7 +41,7 @@ INSERT INTO Movies (Title, Director, Genre) VALUES
 ```
 
 ## Usage
-1. Run the `BookRecommendation.java` file.
+1. Run the `movieRecommendation.java` file.
 2. When prompted, enter the title of a book.
 3. The application will then display movie recommendations based on the genre of the provided book.
 
@@ -51,7 +51,7 @@ INSERT INTO Movies (Title, Director, Genre) VALUES
 During the development phase, users consistently encountered errors when trying to query the database with specific parameters.
 
 ### Solution:
-Upon investigating, it became clear that we were using createStatement which is not suitable for parameterized queries. After referring to the JDBC documentation, we switched to using prepareStatement, allowing us to securely and efficiently handle user input parameters. This change resolved the error and enhanced the reliability of our database interactions.
+Upon investigating, it became clear that we were using createStatement() method from the connection interface which is not suitable for parameterized queries. After referring to the JDBC documentation, we switched to using prepareStatement() method, allowing us to securely and efficiently handle user input parameters. This change resolved the error and enhanced the reliability of our database interactions.
 
 ## Contributions
 We welcome contributions! Please feel free to submit pull requests or raise issues to enhance the functionality of this application.
